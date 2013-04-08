@@ -8,7 +8,7 @@ $files = Dir
   .glob(["*.{md,textile,markdown,html}"])
   .reject { |x| x =~ /(README|example|index)\./}
 
-required =  %w{ title subtitle date location author layout}
+required =  %w{ title subtitle date location author layout description}
 layout =  'dark' 
 
 

@@ -1,5 +1,7 @@
-language: node_js
-node_js:
-  - 0.8
-before_script:
-  - npm install -g grunt-cli
+language: ruby
+notifications:
+  email:
+    - dkovalov@wizorp.jp
+rvm:
+  - 1.9.3
+script: bundle exec rspec spec
