@@ -12,12 +12,16 @@ content_description: Compilation of Wizcorp presentations.
 	</p>
 </section>
 
+{% for pg in site.pages %}{% if pg.url != '/index.html' %}
 <section>
-	<h1 style="font-size: 100px">HTML5 Gaming With PhoneGap (+plugins)</h1>
-	<h3>PhoneGap Meetup, <br /> @Microsoft Tokyo Japan</h3>
+	<h1 style="font-size: 100px">{{ pg.title }}</h1>
+	<h3>{{ pg.subtitle }}, <br />{{pg.location }}</h3>
 	<p>
-		<small>Created by <a href="http://wizcorp.jp">Ally Ogilvie</a> / <a href="http://twitter.com/allyogilvie">@allyogilvie</a>, April 3rd 2013</small>
+		<small>Created by <a href="http://wizcorp.jp">{{ pg.author }}</a> /
+{% if pg.twitter %}<a href="http://twitter.com/{{ pg.twitter }} ">@{{ pg.twitter }}</a>{% endif %}{% if pg.date %}, {{pg.date}}{% endif %}</small>
 	</p>
-	<p>Link <a href="./html5_gaming_with_phonegap.html">here</a></p>
+	<p>Link <a href="{{ pg.url }}">here</a></p>
 </section>
+
+{% endif %}{% endfor %}
 

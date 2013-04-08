@@ -1,11 +1,6 @@
 markdown: rdiscount
 pygments: true
 author: Wizcorp
-# # email: 
-# exclude: bin spec Rakefile Guardfile _posts/template.md.erb Gemfile* template.md.erb
-# domain: wizcorp.jp
-# title: 'TBD
-# description: |
-#   TBD
+exclude: bin spec Rakefile Guardfile _posts/template.md.erb Gemfile* template.md.erb
 
 
