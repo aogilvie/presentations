@@ -1,0 +1,206 @@
+---
+layout: light
+title: Cordova 3.0
+subtitle: Setup and Plugins 
+location: |
+  @Tokyo HQ Tokyo Japan
+description: |
+  What's new in Cordova 3.0.
+author: Ally Ogilvie
+date: September 10th 2013
+twitter: allyogilvie
+---
+
+<section data-background="./assets/image/cordova_3/tokyo_blur.jpg">
+	<img style="border:none; background:transparent; box-shadow:none; padding-top:40%" width="276" height="267" src="./assets/image/cordova_3/logo_orange.png" alt="logo"/>
+</section>
+
+<section>
+	<h1 style="font-size: 100px">What's new in Cordova 3.0</h1>
+	<h3>Wizcorp HQ <br /> @Tokyo Japan</h3>
+	<p>
+		<small>Created by <a href="http://wizcorp.jp">Ally Ogilvie</a> / <a href="http://twitter.com/allyogilvie">@allyogilvie</a>, September 10th 2013</small>
+	</p>
+	<aside class="notes">
+		- Hi, how y'all doing today?
+	</aside>
+</section>
+
+<section>
+	<h2>Quick Intro</h2>
+	<img width="276" height="267" src="./assets/image/cordova_3/cordova_bot2.png" alt="logo"/>
+	<p>Cordova 3.0.x Highlights</p>
+	<ul>
+		<li>Plug-in architecture and tooling</li>
+		<li>More platforms</li>
+		<li>New APIs</li>
+		<li>All new command line tooling</li>
+	<ul>
+	<aside class="notes">
+	</aside>
+</section>
+
+<section>
+	<h2>Plugin Architecture <br />& Toolin'</h2>
+	<br />
+	<ul>
+		<li style="list-style-type:none"><h4>☆　Light Weight Core</h4></li>
+		<li style="list-style-type:none"><h4>☆　Cordova </h4></li>
+		<li style="list-style-type:none"><h4>☆　Plugman </h4>「Plugin Manager」</li>
+	<ul>
+	<aside class="notes">
+- Cordova 3 introduces a new unified project structure and ships with a very limited API surface
+- Developers can now compose a version of Cordova with only the APIs they need
+- Obviously, this means a performance improvement but the real win here is maintenance and upgrading.
+- plugman, which provides automated discovery, installation, and removal of both core and custom plugins.
+	</aside>
+</section>
+
+<section>
+	<h2>Plugin Architecture <br />& Toolin' (Continued...)</h2>
+	<br />
+	<img src="./assets/image/cordova_3/cordova_plugin_diagram.png">
+	<aside class="notes">
+- Quick look at the new architecture layers
+	</aside>
+</section>
+
+<section>	
+	<h3>More platforms...</h3>
+	<img src="./assets/image/cordova_3/the-one-ring.png">
+	<h3>...One project</h3>
+	<aside class="notes">
+	- It unifies all platforms into a single project structure, making it easy to maintain a single codebase for multiple platform
+	</aside>
+</section>
+
+<section>	
+	<h3>New APIs</h3> <br />
+	<ul>
+		<li style="list-style-type:none"><h4>☆　InAppBrowser</h4> 「formerly known as the ChildBrowser plugin」</li>
+		<br />
+		<li style="list-style-type:none"><h4>☆　Globalization API </h4></li>
+	<ul>
+	<aside class="notes">
+
+	</aside>
+</section>
+
+<section data-markdown>	
+	<h3>New APIs (Continued...)</h3>
+	<pre>
+		<code>     
+		// Globalization API
+        	globalization.getPreferredLanguage
+        	globalization.getLocaleName
+        	globalization.dateToString
+        	globalization.stringToDate
+        	globalization.getDatePattern
+        	globalization.getDateNames
+        	globalization.isDayLightSavingsTime
+        	globalization.getFirstDayOfWeek
+        	globalization.numberToString
+        	globalization.stringToNumber
+        	globalization.getNumberPattern
+        	globalization.getCurrencyPattern
+		</code>
+	</pre>
+	<p>Patterns follow Unicode Technical Standard #35. http://unicode.org/reports/tr35/tr35-4.html</p>
+	<aside class="notes">
+
+	</aside>
+</section>
+
+<section data-markdown>	
+	<h3>New APIs (Continued...)</h3>
+	<pre>
+		<code>// Globalization API Example
+    navigator.globalization.getCurrencyPattern(
+        'USD',
+        function (pattern) {
+        	alert('pattern: ' + pattern.pattern + '\n' +
+                            'code: ' + pattern.code + '\n' +
+                            'fraction: ' + pattern.fraction + '\n' +
+                            'rounding: ' + pattern.rounding + '\n' +
+                            'decimal: ' + pattern.decimal + '\n' +
+                            'grouping: ' + pattern.grouping);
+        },
+        function () { alert('Error getting pattern\n'); }
+    );
+		</code>
+		<code>
+		pattern: $#,##0.##;($#,##0.##)
+		code: USD
+		fraction: 2
+		rounding: 0
+		decimal: .
+		grouping: ,
+		</code>
+	</pre>
+	
+	
+	<aside class="notes">
+
+	</aside>
+</section>
+
+<section data-background="./assets/image/cordova_3/super.jpg">	
+	<br />
+	<h3 style="color:white">All New Command Line Tooling</h3>
+	<br />
+	<blockquote style="color:white; text-shadow: 0 0 8px rgba(0, 0, 0, 1); list-style-type:none">
+		"The Cordova CLI is a command line tool to build, deploy and manage Cordova based applications."
+	</blockquote>
+	<aside class="notes">
+
+	</aside>
+</section>
+
+<section>	
+	<br />
+	<h3>All New Command Line Tooling</h3>
+	<br />
+	<pre>
+		<code>
+		# Get Cordova from npm
+		npm install -g cordova
+		
+		# Create a new project
+		cordova create testApp
+		
+		# Add our target platforms
+		cd testApp
+		cordova platform add ios android
+				
+		# Add a plugin
+		cordova plugin add https://github.com/Wizcorp/phonegap-plugin-wizSpinner
+		
+		# Compile our projects
+		cordova build
+		</code>
+	</pre>
+	<aside class="notes">
+
+	</aside>
+	<aside class="notes">
+	</aside>
+</section>
+
+<section data-transition="zoom" data-background="./assets/image/phonegap_day_eu_2013/tada.jpg">
+	<h2 style="color:white; text-shadow: 0 0 8px rgba(0, 0, 0, 1)">Thank you & Links</h2>
+	<div id="spacer" style="margin-top:100px"></div>
+	<h4 style="color:white">Wizcorp Plugins @Github</h4> 
+	<a style="text-shadow: 0 0 6px rgba(0, 0, 0, 1)" href="http://github.com/wizcorp" target="_blank">http://github.com/wizcorp</a>
+	<br />
+	<br />
+	<h4 style="color:white">Cordova CLI Guide @Github</h4> 
+	<a style="text-shadow: 0 0 6px rgba(0, 0, 0, 1)" href="https://github.com/apache/cordova-cli/blob/master/README.md" target="_blank">https://github.com/apache/cordova-cli/blob/master/README.mdwizcorp</a>
+	<br />
+	<br />
+	<h4 style="color:white">Me @Twitter</h4>
+	<a style="text-shadow: 0 0 6px rgba(0, 0, 0, 1)" href="http://twitter.com/allyogilvie" target="_blank">@allyogilvie</a>
+	<aside class="notes">
+
+	</aside>
+</section>
+
