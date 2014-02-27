@@ -1,0 +1,237 @@
+---
+layout: dark
+title: Couchbase and DevOps
+subtitle: 開発・設定・モニタリング
+date:  Feb 2014
+location: |
+  @Wizcorp, Tokyo
+  author: Marc Trudel
+description: |
+  DevOps for Couchbase
+---
+<section data-state="intro">
+    <h1>CouchbaseとDEVOPS</h1>
+    <h3>開発・設定・モニタリング</h3>
+    <p>
+        <small><a href="http://wizcorp.jp">Marc Trudel</a> / <a href="http://twitter.com/stelcheck">@stelcheck</a></small>
+    </p>
+</section>
+<section>
+    <section>
+        <h1>初めに</h1>
+    </section>
+    <section>
+        <h1>Wizcorpとは</h1>
+
+        <ul>
+            <li class="fragment roll-in">Mobile Social Games</li>
+            <li class="fragment roll-in">HTML5・JavaScript</li>
+            <li class="fragment roll-in">ネイティブとハイブリッド (Cordova)</li>
+            <li class="fragment roll-in">https://github.com/Wizcorp</li>
+        </ul>
+    </section>
+    <section>
+        <h1>僕について</h1>
+
+        <ul>
+            <li class="fragment roll-in">最高技術責任者</li>
+            <li class="fragment roll-in">System administration</li>
+            <li class="fragment roll-in">Automation/DevOps</li>
+        </ul>
+    </section>
+    <section>
+        <h1>調査</h1>
+
+        <ul>
+            <li class="fragment roll-in">Vagrant</li>
+            <li class="fragment roll-in">Chef/Puppet/Ansible</li>
+            <li class="fragment roll-in">Jenkins</li>
+            <li class="fragment roll-in">Couchbase</li>
+            <li class="fragment roll-in">DevOps</li>
+        </ul>
+    </section>
+    <section>
+        <h3>本日の課題</h3>
+
+        <ul>
+            <li class="fragment roll-in">プロダクション環境の設定</li>
+            <li class="fragment roll-in">開発環境の設定</li>
+            <li class="fragment roll-in">モニタリング</li>
+        </ul>
+    </section>
+</section>
+<section>
+    <section>
+        <h1>弟１章</h1>
+        <h2>DevOpsとは何か</h2>
+    </section>
+    <section>
+        <h2>Definition</h2>
+
+        <blockquote>
+            DevOps is a software development method that stresses communication,
+            collaboration and integration between software developers and
+            information technology professionals.
+        </blockquote>
+    </section>
+    <section>
+        <h2>Why?</h2>
+
+        <ul>
+            <li class="fragment roll-in">Development vs production</li>
+            <li class="fragment roll-in">Operation</li>
+            <li class="fragment roll-in">Problem solving</li>
+        </ul>
+    </section>
+    <section>
+        <h1>How?</h1>
+
+        <img class="fragment roll-in" src="http://beergeekblog.files.wordpress.com/2012/06/beerglasses.jpg" />
+    </section>
+    <section>
+        <h1>How?</h1>
+
+        <ul>
+            <li class="fragment roll-in">Culture</li>
+            <li class="fragment roll-in">Process</li>
+            <li class="fragment roll-in">Tools</li>
+        </ul>
+
+    </section>
+    <section>
+        <h3>Today's toolkit</h3>
+        <ul>
+            <li class="fragment roll-in">Vagrant</li>
+            <li class="fragment roll-in">Ansible</li>
+            <li class="fragment roll-in">Jenkins</li>
+            <li class="fragment roll-in">Librato</li>
+            <li class="fragment roll-in">AerisCloud</li>
+        </ul>
+    </section>
+    <section>
+        <h1>AerisCloudとは</h1>
+
+        <ul>
+            <li class="fragment roll-in">Wrapper</li>
+            <li class="fragment roll-in">Dev provisioning</li>
+            <li class="fragment roll-in">Production provisioning</li>
+            <li class="fragment roll-in">Jenkins jobs</li>
+        </ul>
+    </section>
+</section>
+<section>
+    <section>
+        <h1>第２章</h1>
+        <h2>Provisioning</h2>
+    </section>
+    <section>
+        <h1>Demo - production</h1>
+
+    </section>
+    <section>
+        <h1>What about developers?</h1>
+
+        <ul>
+            <li class="fragment roll-in">Many services (not just couchbase)</li>
+            <li class="fragment roll-in">One VM per service == CRAZY</li>
+        </ul>
+
+    </section>
+    <section>
+        <h1>Demo - developers</h1>
+    </section>
+    <section>
+        <h1>Benefit</h1>
+
+        <ul>
+            <li class="fragment roll-in">Exact copy of production</li>
+            <li class="fragment roll-in">Local</li>
+            <li class="fragment roll-in">Add services later</li>
+            <li class="fragment roll-in">Rebuild from zero</li>
+        </ul>
+
+    </section>
+</section>
+<section>
+    <section>
+        <h1>第３章</h1>
+        <h2>Maintenance and monitoring</h2>
+    </section>
+    <section>
+        <h1></h1>
+
+        <ul>
+            <li class="fragment roll-in">Backup with cbtransfer</li>
+            <li class="fragment roll-in">Human-readable!</li>
+            <li class="fragment roll-in">Restore with cat * | nc</li>
+            <li class="fragment roll-in">Can restore to a cluster of any size!</li>
+        </ul>
+
+    </section>
+    <section>
+        <h1>Demo</h1>
+    </section>
+    <section>
+        <h1>Jenkins</h1>
+
+        <img src="./images/jenkins.png">
+
+        <h3>Make it sexy!</h3>
+    </section>
+    <section>
+        <h1>Benefit</h1>
+
+        <ul>
+            <li class="fragment roll-in">Restore to a different cluster</li>
+            <li class="fragment roll-in">Restore to a development box!</li>
+            <li class="fragment roll-in">Developers can backup before doing production push</li>
+        </ul>
+
+    </section>
+    <section>
+        <h1>Monitoring</h1>
+
+        <ul>
+            <li class="fragment roll-in">Select what metrics matter</li>
+            <li class="fragment roll-in">Collectd</li>
+            <li class="fragment roll-in">Librato</li>
+        </ul>
+
+    </section>
+    <section>
+        <h1>Monitoring</h1>
+
+        <img src="./images/librato.png">
+
+        <h3>Sexxy!</h3>
+    </section>
+</section>
+<section>
+    <section>
+        <h1>結論</h1>
+    </section>
+    <section>
+        <h1>DevOps x Couchbase == FUN</h1>
+
+        <ul>
+            <li class="fragment roll-in">Easy to setup</li>
+            <li class="fragment roll-in">Much better!</li>
+            <li class="fragment roll-in">Everyone is happier</li>
+        </ul>
+
+    </section>
+    <section>
+        <h1>Happy DevOps!</h1>
+
+        <img src="http://www.smiley-faces.org/wallpaper/smiley-face-wallpaper-widescreen-001.jpg">
+    </section>
+    <section>
+    <h1>質問</h1>
+    </section>
+    <section>
+        <h1>Thank you!</h1>
+
+        <h3>github.com/Wizcorp</h3>
+
+    </section>
+</section>
