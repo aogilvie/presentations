@@ -11,19 +11,17 @@ date: September 24th 2013
 twitter: allyogilvie
 ---
 
-<section data-background="./assets/image/phonegap_day_eu_2013/back2.jpg">
-	<img style="border:none; background:transparent; box-shadow:none; padding-top:40%" width="276" height="267" src="./assets/image/phonegap_day_eu_2013/logo.png" alt="logo"/>
+
+<section data-background="./assets/image/cordova_3/tokyo_blur.jpg">
+	<img style="border:none; background:transparent; box-shadow:none; padding-top:40%" width="276" height="267" src="./assets/image/cordova_3/logo_orange.png" alt="logo"/>
 </section>
 
 <section>
 	<h1 style="font-size: 100px">HTML5 Gaming With PhoneGap</h1>
-	<h3>PhoneGap Day EU 2013, <br /> @Compagnietheater Amsterdam Holland</h3>
+	<h3>PhoneGap Day EU 2013, <br /> @Compagnietheater Amsterdam Netherlands</h3>
 	<p>
 		<small>Created by <a href="http://wizcorp.jp">Ally Ogilvie</a> / <a href="http://twitter.com/allyogilvie">@allyogilvie</a>, September 24th 2013</small>
 	</p>
-	<aside class="notes">
-		- Hi, how y'all doing today?
-	</aside>
 </section>
 
 <section>
@@ -31,16 +29,11 @@ twitter: allyogilvie
 	<img width="276" height="267" src="./assets/image/phonegap_day_eu_2013/logo_blue.png" alt="logo"/>
 	<p>Wizcorp - a software company</p>
 	<ul>
-		<li>We make games</li>
+		<li>We make games. 4 million+ downloads</li>
 		<li>We &lt;3 open source</li>
-		<li>We use Cordova, the framework</li>
+		<li>We use PhoneGap. <br />
+		(<u>First</u> to publish a PhoneGap-based game)
 	<ul>
-	<aside class="notes">
-- Gonna talk about how we make Games
-- We might not be the way you make games, you might not even make games… but I hope I can share some cool stuff with you today.
-- Any "PhoneGap stuff" you see today, it's open source!
-- I will talk more about "Cordova" the framework, than "PhoneGap" the product.
-	</aside>
 </section>
 
 <section data-transition="cube">
@@ -51,8 +44,8 @@ twitter: allyogilvie
 		<li style="list-style-type:none"><h4>M.A.G.E. </h4> 「Magical Async Game Engine」</li>
 		<li style="list-style-type:none"><h4>Moria </h4> 「an automatic, scalable architecture」</li>
 		<li style="list-style-type:none"><h4>GamePad </h4> 「Git-based environment deployment tool」</li>
-		<li style="list-style-type:none"><h4>Frontend stack </h4> 「WUI, WUIC, Animator」</li>
-		<li style="list-style-type:none" class="fragment">...and of course, <b>PHONEGEEEAP &lt;3</b></li>
+		<li style="list-style-type:none"><h4>Frontend stack </h4> 「animation and UI libs」</li>
+		<li style="list-style-type:none" class="fragment">...and of course, <b>PhoneGap &lt;3</b></li>
 	<ul>
 	<aside class="notes">
 - varies from game-to-game
@@ -90,7 +83,7 @@ Frontend is the goggles you have to use to be able to see them. (You won't see t
 	<br />
 		<h4 class="fragment roll-in" data-fragment-index="1" style="color:white; text-shadow: 0 0 8px rgba(0, 0, 0, 1); list-style-type:none">★ API extensions via plugins</h4>
 	<br />
-		<h4 class="fragment roll-in" data-fragment-index="1" style="color:white; text-shadow: 0 0 8px rgba(0, 0, 0, 1); list-style-type:none">★ Device events: onPause(), onResume(), etc.</h4>
+		<h4 class="fragment roll-in" data-fragment-index="1" style="color:white; text-shadow: 0 0 8px rgba(0, 0, 0, 1); list-style-type:none">★ Device Events: onPause, onResume, etc.</h4>
 	<br />
 		<h4 class="fragment roll-in" data-fragment-index="1" style="color:white; text-shadow: 0 0 8px rgba(0, 0, 0, 1); list-style-type:none">★ Cross Platform</h4>
 	</ul>
@@ -122,100 +115,67 @@ Frontend is the goggles you have to use to be able to see them. (You won't see t
 	</aside>
 </section>
 
-
 <section>
-	<h2>Custom components</h2>
-	<h4>(canvas/webGL with Ejecta)</h4>
-	<div id="spacer" style="margin-top:100px"></div>
+	<h2>Loading Spinner</h2>
+	<h4><a href="http://github.com/wizcorp/phonegap-plugin-wizSpinner" target="_blank">github.com/wizcorp/phonegap-plugin-wizSpinner</a></h4>
+	<div id="spacer" style="margin-top:50px"></div>
 	<ul>
-		<h4>☆　Create a webGL canvas without a webview</h4>
-		<h4>☆　Connect to PhoneGap via wizViewManager plugin</h4>
-		<h4>☆　Users cannot touch / scroll the webview</h4>
-		<h4>☆　Use webGL in iOS!</h4>
+		<h4>☆　Non blocking JS spinner</h4>
+		<h4>☆　Faster draw time on high res screens (tablets)</h4>
+		<h4>☆　Users cannot touch / scroll the WebView</h4>
+		<h4>☆　Uses REAL OS component = consistant UI</h4>
 	</ul>
-	<aside class="notes">
-- What does it solve?
-	- Creates a webGL canvas view without a WebView
-	- Connected to PhoneGap via wizViewManger plugin
-	- Use webGL in iOS!
-	</aside>
-</section>
-
-<section data-background="./assets/image/phonegap_day_eu_2013/tiki_back.jpg">
-	<h2 style="color:white; text-shadow: 0 0 8px rgba(0, 0, 0, 1)">Canvas Example</h2>
-	<img style="border:none; box-shadow:none; background:transparent" width="282" height="241" src="./assets/image/phonegap_day_eu_2013/tiki_logo.png" alt="tiki logo">
-	<aside class="notes">
-
-	</aside>
+	<image src="./assets/image/phonegap_day_eu_2013/spinner_screen.jpg"/>
 </section>
 
 <section>
 	<h2>View Management</h2>
-	<div id="spacer" style="margin-top:100px"></div>
-	<ul>
-		<h4>☆　Total WebView and Canvas view control</h4>
-		<h4>☆　Create, remove, show, hide, animate, <br />resize, message, load local or remote content</h4>
-	</ul>
-	<aside class="notes">
-- What does it solve?
-- Total WebView and Canvas view control
-	- create
-	- remove
-	- show
-	- hide
-	- animate
-	- resize
-	- post message / data
-	- loading local / remote sources
-	</aside>
-</section>
 
-
-<section data-transition="fade">
-	<h2>Asset Management</h2>
-	<div id="spacer" style="margin-top:100px"></div>
+	<h4><a href="http://github.com/wizcorp/phonegap-plugin-wizViewManager" target="_blank">github.com/wizcorp/phonegap-plugin-wizViewManager</a></h4>
+	<div id="spacer" style="margin-top:50px"></div>
 	<ul>
-		<h4>☆　SIMPLE relative asset management</h4>
-		<h4>☆　Client / server asset synchronization</h4>
+		<h4>☆　Total WebView control</h4>
+		<h4>☆　Create, <br />　　Remove, <br />　　Show, <br />　　Hide, <br />　　Animate, <br />　　Resize, <br />　　Message, <br />　　Load local or remote content</h4>
 	</ul>
-	<img width="776" height="300" src="./assets/image/phonegap_day_eu_2013/wizAssets_simple.jpg" alt="simple assets!">
-	<aside class="notes">
-- What does it solve?
-	- SIMPLE relative asset management
-	- Client - server asset synchronization
-	</aside>
-</section>
-
-<section>
-	<h2>Spinners / Loaders</h2>
-	<div id="spacer" style="margin-top:100px"></div>
-	<ul>
-		<h4>☆　Non blocking JS spinner</h4>
-		<h4>☆　Faster draw time on high res screens (tablets)</h4>
-		<h4>☆　Users cannot touch / scroll the webview</h4>
-		<h4>☆　Uses REAL OS UI components</h4>
-	</ul>
-	<aside class="notes">
-- What does it solve?
-	- Non blocking spinner (if your JavaScript is running particularly heavy shit, your .gif wont spin sucker)
-	- Much faster draw time on high res screens (tablets)
-	- Users cannot touch the webview
-	- Uses REAL OS UI spinner UIActivityIndicatorView.. ProgressDialog.
-	</aside>
 </section>
 
 <section data-background="./assets/image/phonegap_day_eu_2013/drs_back.jpg">
 	<h2 style="color:white; text-shadow: 0 0 8px rgba(0, 0, 0, 1)">Full Example</h2>
 	<img style="border:none; box-shadow:none; background:transparent" width="640" height="451" src="./assets/image/phonegap_day_eu_2013/drs_logo.png" alt="drs logo">
-	<aside class="notes">
 
-	</aside>
+</section>
+
+<section>
+	<h2>Canvas</h2>
+	<h4><a href="http://github.com/wizcorp/phonegap-plugin-wizCanvas" target="_blank">github.com/wizcorp/phonegap-plugin-wizCanvas</a></h4>
+	<div id="spacer" style="margin-top:50px"></div>
+	<ul>
+		<h4>☆　High performance canvas without a WebView</h4>
+		<h4>☆　WebGL without a WebView</h4>
+		<h4>☆　Bridged (2-way) with PhoneGap</h4>
+		<h4>☆　Uhh.. WebGL in iOS!!</h4>
+	</ul>
+	<image src="./assets/image/phonegap_day_eu_2013/ejecta_logo.jpg"/>
+</section>
+
+<section data-background="./assets/image/phonegap_day_eu_2013/tiki_back.jpg">
+	<h2 style="color:white; text-shadow: 0 0 8px rgba(0, 0, 0, 1)">Canvas Example</h2>
+	<img style="border:none; box-shadow:none; background:transparent" width="282" height="241" src="./assets/image/phonegap_day_eu_2013/tiki_logo.png" alt="tiki logo">
 </section>
 
 <section data-transition="zoom" data-background="./assets/image/phonegap_day_eu_2013/tada.jpg">
 	<h2 style="color:white; text-shadow: 0 0 8px rgba(0, 0, 0, 1)">Thank you & Links</h2>
-	<div id="spacer" style="margin-top:100px"></div>
+	<div id="spacer" style="margin-top:50px"></div>
+	<h4 style="color:white">TikiTakoo</h4> 
+	<a style="text-shadow: 0 0 6px rgba(0, 0, 0, 1)" href="https://itunes.apple.com/app/id634784938" target="_blank"><image src="./assets/image/phonegap_day_eu_2013/itunes_logo.png"/></a>
+	
+	<div id="spacer" style="margin-top:15px"></div>
 	<h4 style="color:white">Wizcorp @Github</h4> <a style="text-shadow: 0 0 6px rgba(0, 0, 0, 1)" href="http://github.com/wizcorp" target="_blank">http://github.com/wizcorp</a>
+	
+	<div id="spacer" style="margin-top:15px"></div>
+	<h4 style="color:white">Ejecta @Github</h4> <a style="text-shadow: 0 0 6px rgba(0, 0, 0, 1)" href="https://github.com/phoboslab/ejecta" target="_blank">https://github.com/phoboslab/ejecta</a>
+	
+	<div id="spacer" style="margin-top:15px"></div>
 	<h4 style="color:white">Me @Twitter</h4> <a style="text-shadow: 0 0 6px rgba(0, 0, 0, 1)" href="http://twitter.com/allyogilvie" target="_blank">@allyogilvie</a>
 	<aside class="notes">
 
