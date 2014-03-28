@@ -3,7 +3,7 @@ layout: light
 title: Android NDK Flash Intro
 subtitle: Android Meetup (March) 
 location: |
-  @港区西麻布1-4-20 ワルトハイム西麻布, Tokyo
+  @TenTen,港区西麻布1-4-20 ワルトハイム西麻布, Tokyo
 description: |
   Flash intro to the Android NDK.
 author: Ally Ogilvie
@@ -16,7 +16,7 @@ twitter: allyogilvie
 
 <section>
 	<h1 style="font-size: 100px">Android NDK Flash Intro</h1>
-	<h3>Android Meetup (March), <br /> @港区西麻布1-4-20 ワルトハイム西麻布, Tokyo</h3>
+	<h3>Android Meetup (March), <br /> @TenTen,港区西麻布1-4-20 ワルトハイム西麻布, Tokyo</h3>
 	<p>
 		<small>Created by <a href="http://wizcorp.jp">Ally Ogilvie</a> / <a href="http://twitter.com/allyogilvie">@allyogilvie</a>, March 27th 2014</small>
 	</p>
@@ -31,7 +31,7 @@ twitter: allyogilvie
 	<br />
 	<ul>
 		<li>want to port an application written in C</li>
-		<li>want to write a very processor intensive application (algorithums)</li>
+		<li>want to write a very processor intensive application (algorithms)</li>
 	</ul>
 	<aside class="notes">
 - Toolset that allows you to implement parts of your app using native-code languages such as C and C++
@@ -41,7 +41,7 @@ twitter: allyogilvie
 
 <section data-transition="cube">
 	<h2>Be Sensible!</h2>
-	<p>[Don't assume your application will be X times more performant that Java]</p>
+	<p>[Don't assume your application will be X times more performant than Java]</p>
 	<br />
 	<ul>
 		<li>Java<->Native C exchanges add some overhead</li>
@@ -77,7 +77,7 @@ twitter: allyogilvie
 		<li>Create a jni folder at root, add your c file</li>
 		<li>Create a make file with your method</li>
 		<img style="border:4px solid #000;" src="./assets/image/ndk_beginner/step2.png" alt="step2"/>
-	<ul>
+	</ul>
 	<aside class="notes">
 	</aside>
 </section>
@@ -88,9 +88,9 @@ twitter: allyogilvie
 	<ul>
 		<li>This example is C:</li>
 		<pre><code> 
-#include <jni.h>
-#include <android/log.h>
-#include <string.h>
+#include &lt;jni.h&gt;
+#include &lt;android&#47;log.h&gt;
+#include &lt;string.h&gt;
 
 #define  LOG_TAG "testApp"
 #define  Log(...)  __android_log_print(ANDROID_LOG_DEBUG,LOG_TAG,__VA_ARGS__)
@@ -98,8 +98,9 @@ twitter: allyogilvie
 
 void Java_com_example_testapp_MainActivity_nativeMyFunction(JNIEnv *env, jobject thiz, jstring message)
 {
-	const char *messageAsChar = (*env)->GetStringUTFChars(env, message, 0);
-	Log("Message is in C: %s", messageAsChar);
+    const char *messageAsChar = 
+        (*env)->GetStringUTFChars(env, message, 0);
+    Log("Message is in C: %s", messageAsChar);
 }
 		</code></pre>
 	<ul>
@@ -112,23 +113,24 @@ void Java_com_example_testapp_MainActivity_nativeMyFunction(JNIEnv *env, jobject
 	<ul>
 		<li>This example is C++:</li>
 		<pre><code> 
-#include <jni.h>
-#include <android/log.h>
-#include <string.h>
+#include &lt;jni.h&gt;
+#include &lt;android&#47;log.h&gt;
+#include &lt;string.h&gt;
 
 #define  LOG_TAG "testApp"
 #define  Log(...)  __android_log_print(ANDROID_LOG_DEBUG,LOG_TAG,__VA_ARGS__)
 
 extern "C" {
 
-	JNIEXPORT void JNICALL Java_com_example_testapp_MainActivity_nativeMyFunction(JNIEnv *env, jobject thiz, jstring message)
-	{
-		const char *messageAsChar = (env)->GetStringUTFChars(message, 0);
-		Log("Message is in C++: %s", messageAsChar);
-	}
+    JNIEXPORT void JNICALL Java_com_example_testapp_MainActivity_nativeMyFunction(JNIEnv *env, jobject thiz, jstring message)
+    {
+        const char *messageAsChar = 
+            (env)->GetStringUTFChars(message, 0);
+        Log("Message is in C++: %s", messageAsChar);
+    }
 }
 		</code></pre>
-	<ul>
+	</ul>
 	<aside class="notes">
 	</aside>
 </section>
@@ -138,7 +140,8 @@ extern "C" {
 	<div id="spacer" style="margin-top:50px"></div>
 	<ul>
 		<li>Sample Android.mk:</li>
-		<pre><code> 
+	</ul>
+	<pre><code> 
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
@@ -148,8 +151,7 @@ LOCAL_MODULE    := testLib
 LOCAL_SRC_FILES := testApp.c
 
 include $(BUILD_SHARED_LIBRARY)
-		</code></pre>
-	<ul>
+	</code></pre>
 	<aside class="notes">
 	</aside>
 </section>
@@ -159,16 +161,16 @@ include $(BUILD_SHARED_LIBRARY)
 	<div id="spacer" style="margin-top:50px"></div>
 	<ul>
 		<li>MainActivity.java:</li>
-		<pre><code> 
+	</ul>
+	<pre><code> 
 nativeMyFunction("Hello world");
-		
+	
 public native void nativeMyFunction(String message);
 
 static {
-	System.loadLibrary("testLib");
+    System.loadLibrary("testLib");
 }
-		</code></pre>
-	<ul>
+	</code></pre>
 	<aside class="notes">
 	</aside>
 </section>
