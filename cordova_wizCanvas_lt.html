@@ -1,0 +1,115 @@
+---
+layout: light
+title: Cordova Plugin wizCanvas LT
+subtitle: webGL App in 5 mins, Lightning Talk 
+location: |
+  @Internet Initiative Japan
+description: |
+  WizCanvas: A hardware accelerated canvas plugin.
+author: Ally Ogilvie
+date: June 10th 2014
+twitter: allyogilvie
+---
+
+<section data-background="./assets/image/cordova_3/tokyo_blur.jpg">
+	<img style="border:none; background:transparent; box-shadow:none; padding-top:40%" width="276" height="267" src="./assets/image/cordova_3/logo_orange.png" alt="logo"/>
+</section>
+
+<section>
+	<h1 style="font-size: 100px">Cordova WebGL App in 5 minutes (LT)</h1>
+	<h3>@Internet Initiative Japan</h3>
+	<p>
+		<small>Created by <a href="http://wizcorp.jp">Ally Ogilvie</a> / <a href="http://twitter.com/allyogilvie">@allyogilvie</a>, June 10th 2014</small>
+	</p>
+	<aside class="notes">
+	// Notes
+	</aside>
+</section>
+
+<section>
+	<h2>Create a project</h2>
+	<img width="276" height="267" src="./assets/image/cordova_3/cordova_bot2.png" alt="logo"/>
+	<pre>
+		<code>
+cordova create myApp
+    
+cd myApp
+    	</code>
+	</pre>
+	<aside class="notes">
+	Should now all know what Cordova is!
+	Let me show you how easy it is to use a Cordova plugin.
+	
+	</aside>
+</section>
+
+<section>
+	<h2>Add WizCanvas Plugin</h2>
+	<br />
+	<img src="./assets/image/cordova_wizCanvas_lt/html5-canvas.png">
+	<img src="./assets/image/cordova_wizCanvas_lt/plus.png">
+	<img src="./assets/image/cordova_wizCanvas_lt/webgl-logo.png">
+	<pre>
+		<code>
+cordova platform add ios
+    
+cordova plugin add https://github.com/Wizcorp/phonegap-plugin-wizCanvas
+
+cordova build iOS
+    	</code>
+	</pre>
+	<aside class="notes">
+Takes a while...
+Explain what is wizCanvas
+	</aside>
+</section>
+
+<section>
+	<h2>Add Our Web Code</h2>
+	<br />
+	<p>Edit /www folder files...</p>
+	<pre>
+		<code>
+// Build again
+cordova build ios
+    	</code>
+	</pre>
+	<aside class="notes">
+Add our website application code (Already prepared)
+Show in browser, copy code,
+build project again
+	</aside>
+</section>
+
+<section>	
+	<h3>Run...</h3>
+	<br />
+	<img src="./assets/image/cordova_wizCanvas_lt/super.jpg">
+	<br />
+	<ul>
+		<li>Open Xcode</li>
+		<li>Compile!</li>
+	</ul>
+	<aside class="notes">
+Open Xcode and compile!
+	</aside>
+</section>
+
+<section data-transition="zoom">
+	<h2>Thank you & Links</h2>
+	<div id="spacer" style="margin-top:100px"></div>
+	<h4>Wizcorp Plugins @Github</h4> 
+	<a href="http://github.com/wizcorp" target="_blank">http://github.com/wizcorp</a>
+	<br />
+	<br />
+	<h4>WizCanvas @Github</h4> 
+	<a href="http://github.com/wizcorp/phonegap-plugin-wizCanvas" target="_blank">http://github.com/wizcorp/phonegap-plugin-wizCanvas</a>
+	<br />
+	<br />
+	<h4>Me @Twitter</h4>
+	<a href="http://twitter.com/allyogilvie" target="_blank">@allyogilvie</a>
+	<aside class="notes">
+
+	</aside>
+</section>
+
