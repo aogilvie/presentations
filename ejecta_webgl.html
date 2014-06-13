@@ -189,6 +189,8 @@ Ejecta has NO DOM...
 	<h4>Modifications</h4>
 	<br />
 <pre class="fragment"><code>renderer = new THREE.WebGLRenderer();
+container = document.getElementById( 'container' );
+container.appendChild( renderer.domElement );
 </code></pre>
 <p class="fragment">Becomes...</p>
 <pre class="fragment"><code>renderer = new THREE.WebGLRenderer( 
@@ -208,9 +210,9 @@ We pass in a fake Ejecta canvas element to the constructor or WebGLRenderer.
 	<h4>Modifications (part 2)</h4>
 <pre class="fragment"><code>new THREE.OrbitControls(camera);</code></pre>
 </code></pre>
-<p class="fragment">Inside change...</p>
+<p class="fragment">Inside OrbitControls...</p>
 <pre class="fragment"><code>function touchMove { ...
-var element = scope.domElement === document ? scope.domElement.body : scope.domElement;
+	var element = scope.domElement === document ? scope.domElement.body : scope.domElement;
 ... }
 </code></pre>
 <p class="fragment">Becomes...</p>
@@ -221,11 +223,8 @@ if (window.ejecta) {
 }</code></pre>
 
 	<aside class="notes">
-
-We need to make some minor modifications
-
-We pass in a fake Ejecta canvas element to the constructor or WebGLRenderer.
-
+Then we need to modify our camera controller to get the correct width and height of Ejecta.
+Let’s do this, and compile again.
 	</aside>
 </section>
 
@@ -233,12 +232,12 @@ We pass in a fake Ejecta canvas element to the constructor or WebGLRenderer.
 <section data-transition="zoom">
 	<h2>Thank you & Links</h2>
 	<div id="spacer" style="margin-top:100px"></div>
-	<h4>Wizcorp Plugins @Github</h4> 
-	<a href="http://github.com/wizcorp" target="_blank">http://github.com/wizcorp</a>
+	<h4>Ejecta iOS @Github</h4> 
+	<a href="https://github.com/phoboslab/Ejecta" target="_blank">https://github.com/phoboslab/Ejecta</a>
 	<br />
 	<br />
-	<h4>WizCanvas @Github</h4> 
-	<a href="http://github.com/wizcorp/phonegap-plugin-wizCanvas" target="_blank">http://github.com/wizcorp/phonegap-plugin-wizCanvas</a>
+	<h4>Ejecta Android @Github</h4> 
+	<a href="https://github.com/wizcorp/Ejecta-X" target="_blank">https://github.com/wizcorp/Ejecta-X</a>
 	<br />
 	<br />
 	<h4>Me @Twitter</h4>
