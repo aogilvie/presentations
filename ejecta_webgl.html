@@ -1,0 +1,300 @@
+---
+layout: light
+title: iOS, Ejecta & WebGL
+subtitle: Building WebGL apps with Ejecta
+location: |
+  @Microsoft, Japan
+description: |
+  WebGL Meetup presentation
+author: Ally Ogilvie
+date: June 13th 2014
+twitter: allyogilvie
+---
+
+
+<section>
+	<h1 style="font-size: 100px">iOS, Ejecta & WebGL</h1>
+	<h3>@Microsoft, Japan</h3>
+	<p>
+		<small>Created by <a href="http://wizcorp.jp">Ally Ogilvie</a> / <a href="http://twitter.com/allyogilvie">@allyogilvie</a>, June 13th 2014</small>
+	</p>
+	<aside class="notes">
+	// Notes
+
+	</aside>
+</section>
+
+<section>
+	<h3>今日のWebGLサンプル</h3>
+	<h4>Today's simple WebGL sample</h4>
+	<div id="container"></div>
+	<aside class="notes">
+	Kore wa, Safari wo tsukatta WebGL sample desu.
+	</aside>
+</section>
+
+<section>
+	<h2>今日の課題は・・・</h2>
+	<h3>The challenge...</h3>
+	<br />
+
+	<aside class="notes">
+and the challenge today...
+
+kyo no kadai wa...
+	</aside>
+</section>
+
+<section>
+	<h3>iOS 6のアプリ!</h3>
+	<h4> iOS 6 app! xD</h4>
+	<img height="300px" src="./assets/image/ejecta_webgl/wtf.gif">
+	<img height="300px" class="fragment" src="./assets/image/ejecta_webgl/wtf2.gif">
+	<img height="200px" class="fragment" src="./assets/image/ejecta_webgl/wtf3.gif">
+	<aside class="notes">
+Create an iOS 6 application with WebGL!
+iOS 6 no WebGL apuri wo tsukurimaaaa~su.
+
+Thats.. just not possible right?? I have to wait for iOS 8 and stuff..
+Well not quite..
+
+hmmm... kore muri desuyone?
+iOS 8 no release made matsu hitsuyo ga arimasu...
+….Iya, jitsu wa sonna koto wa nai desuyo~
+
+	</aside>
+</section>
+
+<section>
+	<h3>ご説明しましょう・・・</h3>
+	<h4>Oh tell me mOar..</h4>
+	<br />
+	<img height="400px" src="./assets/image/ejecta_webgl/tell-me-more.gif">
+	<aside class="notes">
+Got your attention now?
+
+Kyomi arimasuka?
+	</aside>
+</section>
+
+<section>
+	<h3>Ejecta! (iOS向け）</h3>
+	<h4>Ejecta! (for iOS)</h4>
+	<img src="./assets/image/ejecta_webgl/ejectalogo.png">
+	<br />
+
+	<ul>
+		<li class="fragment">Written by Team PhobosLab [@phoboslab]<br />(Mostly Dominic Szablewski)</li>
+		<li class="fragment">Supports iOS 5.0+</li>
+		<li class="fragment">Runs 2d and webgl canvas commands</li>
+		<li class="fragment">Git clone https://github.com/phoboslab/Ejecta.git</li>
+	</ul>
+	<aside class="notes">
+Created by Team Phoboslab 
+Ejecta wa Team Phoboslab ga kaihatsu shimasdhita.
+
+Main developer DOMINIC SZABLEWSKI [sha-BLEF-ski]
+Main developer wa Dominic Szablewski san desu.
+
+Supports ios 5 +
+iOS 5 ijo no support ga arimasu.
+
+Supports 2d and webgl canvas
+Soreto, 2d to webgl canvas mo support mo arimasu.
+
+I’ll download Ejecta now and continue with the presentation.
+Kokode, ejecta wo download shite okimasu…..
+(after download) dewa tsuzukemasu.
+	</aside>
+</section>
+
+<section>
+	<h3>どのように作動するの？</h3>
+	<h4>How does it work?</h4>
+	<br />
+	<img src="./assets/image/ejecta_webgl/components.png" alt="diagram here" />
+
+	<aside class="notes">
+	Jyaa Dono yō ni sadō suru no?
+	
+Ejecta has 2 main component: JavaScriptCore and OpenGL ES view.
+Ejecta niwa, futatsu omona components ga arimasu. JavaScriptCore to OpenGL ES view desu.
+
+
+	</aside>
+</section>
+
+<section>
+	<h3>JavaScriptCore?</h3>
+	<img src="./assets/image/ejecta_webgl/javascriptcore.png" alt="diagram here" />
+
+	<aside class="notes">
+JavaScriptCore is a framework inside part of WebKit, which is a part of Safari and iOS
+JavaScriptCore wa, WebKit no framework no koto desu.
+WebKit wa Safari to iOS no ichibu desu.
+	</aside>
+</section>
+
+<section>
+	<h3>JavaScriptCore + OpenGL ES...</h3>
+	<img src="./assets/image/ejecta_webgl/openglview.png" alt="diagram here" />
+
+	<aside class="notes">
+Code is executed in JavaScriptCore which controls Objective-C bindings to Open GLES, The result is output to a OpenGL ES view.
+	</aside>
+</section>
+
+<section>
+	<h3>デモに戻りましょう・・・</h3>
+	<h4>Back to our demo...</h4>
+	<br />
+	<img src="./assets/image/ejecta_webgl/ourdemo.png" alt="example demo" /><br />
+	<img src="./assets/image/ejecta_webgl/threejslogo.png" alt="three.js logo" />
+	
+	<aside class="notes">
+Let's run our three.js demo in Ejecta!
+Ejecta de three.js demo wo sadou sasete mimasho!
+
+We already cloned this repository. Let's add our Javascript files.
+kono repository wa mo copy shita node, Javascript file wo tsuika shite compile shimasho.
+
+
+[create App folder, img folder, add js files.]
+
+[prompt iOS 5.1.1 compatibility]
+
+
+CATCH! ... 
+
+	</aside>
+</section>
+
+<section>
+	<h3>It doesn't work!?</h3>
+	<br />
+	<p>WHY!??</p>
+	<img src="./assets/image/ejecta_webgl/why.gif" alt="WHHYYYY?!" />
+
+	<aside class="notes">
+It does not work!?
+Why... ah, because~~
+
+are? sadou shimasen ne?
+
+nande… ah, catch ga arukara desune!
+
+	</aside>
+</section>
+
+
+<section>
+	<h3>The catch!</h3>
+	<br />
+	<p>There is no real DOM!</p>
+	<ul>
+		<li class="fragment" style='width: 700px'>
+<pre><code>renderer = new THREE.WebGLRenderer();
+container = document.getElementById( 'container' );
+container.appendChild( renderer.domElement );
+</code></pre>
+		</li>
+		<li class="fragment"><pre><code>TypeError: null is not an object 
+(evaluating 'container.appendChild') at line 39 
+in webGLDemo.js
+</code></pre></li>
+	</ul>
+	<aside class="notes">
+
+CATCH!
+This demo is using common canvas library "Three.js"
+kono demo dewa, Three.js to iu, ippanteki na canvas library wo tsukatte imasu.
+
+
+Ejecta has NO DOM...
+Demo, Ejecta wa DOM access dekimasen. DOM wa <div> mitaina HTML element toka, appendChild mitaina command no joho wo motte-imasu. Ejecta wa simple na canvas javascript view desu.
+	</aside>
+</section>
+
+
+<section>
+	<h3>修正</h3>
+	<h4>Modifications</h4>
+	<br />
+<pre class="fragment"><code>renderer = new THREE.WebGLRenderer();
+container = document.getElementById( 'container' );
+container.appendChild( renderer.domElement );
+</code></pre>
+<p class="fragment">Becomes...</p>
+<pre class="fragment"><code>renderer = new THREE.WebGLRenderer( 
+	{ canvas: document.getElementById( 'canvas' ) })</code></pre>
+
+	<aside class="notes">
+
+We need to make some minor modifications
+Sukoshi shusei suru hitsuyo ga arimasu.
+
+We pass in a fake Ejecta canvas element to the constructor or WebGLRenderer.
+Mazu, fake no ejecta canvas element wo, constructor ka WebGLRender ni 
+
+	</aside>
+</section>
+
+<section>
+	<h3>修正 (part 2)</h3>
+	<h4>Modifications (part 2)</h4>
+<pre class="fragment"><code>new THREE.OrbitControls(camera);</code></pre>
+</code></pre>
+<p class="fragment">Inside OrbitControls...</p>
+<pre class="fragment"><code>function touchMove { ...
+	var element = scope.domElement === document ? scope.domElement.body : scope.domElement;
+... }
+</code></pre>
+<p class="fragment">Becomes...</p>
+<pre class="fragment"><code>var element = scope.domElement === document ? scope.domElement.body : scope.domElement;
+if (window.ejecta) {
+	element.clientHeight = window.innerHeight;
+	element.clientWidth = window.innerHeight;
+}</code></pre>
+
+	<aside class="notes">
+Then we need to modify our camera controller to get the correct width and height of Ejecta.
+Let’s do this, and compile again.
+	</aside>
+</section>
+
+
+<section data-transition="zoom">
+	<h2>Thank you & Links</h2>
+	<div id="spacer" style="margin-top:100px"></div>
+	<h4>Ejecta iOS @Github</h4> 
+	<a href="https://github.com/phoboslab/Ejecta" target="_blank">https://github.com/phoboslab/Ejecta</a>
+	<br />
+	<br />
+	<h4>Ejecta Android @Github</h4> 
+	<a href="https://github.com/wizcorp/Ejecta-X" target="_blank">https://github.com/wizcorp/Ejecta-X</a>
+	<br />
+	<br />
+	<h4>Me @Twitter</h4>
+	<a href="http://twitter.com/allyogilvie" target="_blank">@allyogilvie</a>
+	<aside class="notes">
+ijo desu. Arigatou gozaimashita
+	</aside>
+</section>
+
+
+<script type="text/javascript">
+	var scripts = [
+	    "assets/js/ejecta_webgl/three.min.js",
+	    "assets/js/ejecta_webgl/OrbitControls.js",
+	    "assets/js/ejecta_webgl/webGLDemo.js",
+	];
+	
+	for (var i = 0; i < scripts.length; i++) {
+	    var script = document.createElement('script');
+	    script.type = 'text/javascript';
+	    script.src = scripts[i];
+	    script.async = false;
+	    document.body.appendChild(script);
+	}
+	animate();
+</script>
