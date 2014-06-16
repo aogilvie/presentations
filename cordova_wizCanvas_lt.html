@@ -1,0 +1,129 @@
+---
+layout: light
+title: Cordova Plugin wizCanvas LT
+subtitle: webGL App to iOS in 5 mins (LT) <h4>5分でCordova WebGL アプリを作成</h4>
+location: |
+  @Internet Initiative Japan
+description: |
+  WizCanvas: A hardware accelerated canvas plugin.
+author: Ally Ogilvie
+date: June 10th 2014
+twitter: allyogilvie
+---
+
+
+<section>
+	<h1 style="font-size: 100px">WebGL App to iOS in 5 minutes (LT)</h1>
+	<h4>5分でCordova WebGL アプリを作成</h4>
+	<h3>@Internet Initiative Japan</h3>
+	<p>
+		<small>Created by <a href="http://wizcorp.jp">Ally Ogilvie</a> / <a href="http://twitter.com/allyogilvie">@allyogilvie</a>, June 10th 2014</small>
+	</p>
+	<aside class="notes">
+	// Notes
+	Watashi wa Wizcorp no Ari- tomoshimasu. Yoroshiku onegaishimasu.
+	Kyou wa, go fun de webGL iOS no appuri wo tsukurimasu.
+	(Shows Chrome demo) kore to onaji mono o iOS de tsukurimasu.
+	</aside>
+</section>
+
+<section>
+	<h3>プロジェクトの作成</h3>
+	<h4>Create a project</h4>
+	<img width="276" height="267" src="./assets/image/cordova_3/cordova_bot2.png" alt="logo"/>
+	<pre>
+		<code>
+cordova create myApp
+    
+cd myApp
+    	</code>
+	</pre>
+	<aside class="notes">
+	Cordova ni tsuite wa mo shitteru to omoimasu.
+	
+	Kyou wa, command line kara, atarashi project wo tsukurimasu.
+	
+	Kono project ni "myApp" to namae wo tsukemasu.	
+	</aside>
+</section>
+
+<section>
+	<h3>WizCanvasプラグインを追加</h3>
+	<h4>Add WizCanvas Plugin</h4>
+	<br />
+	<img src="./assets/image/cordova_wizCanvas_lt/html5-canvas.png">
+	<img src="./assets/image/cordova_wizCanvas_lt/plus.png">
+	<img src="./assets/image/cordova_wizCanvas_lt/webgl-logo.png">
+	<pre>
+		<code>
+cordova platform add ios
+    
+cordova plugin add https://github.com/Wizcorp/phonegap-plugin-wizCanvas
+
+cordova build iOS
+    	</code>
+	</pre>
+	<aside class="notes">
+WizCanvas wo tsuika shimasu. (sounds like suica)
+    
+Jikan ga kaka-runode, WizCanvas plugin ni tsuite sesumei shimasu.
+
+WizCanvas plugin wo tsukau to, hardware accelerate canvas view wo tsukuru koto ga dekimasu.
+
+Sarani, WebGL mo tsukau koto ga dekimasu.
+
+Kyo no demo wa, WebGL to Three.js wo tsukaimasu.
+	</aside>
+</section>
+
+<section>
+	<h3>Webコードの追加</h3>
+	<h4>Add Our Web Code</h4>
+	<br />
+	<p>Edit /www folder files...</p>
+	<pre>
+		<code>
+// Build again
+cordova build ios
+    	</code>
+	</pre>
+	<aside class="notes">
+Tsugi ni, website appuri no code wo tsuika shimasu.
+
+Code wo copy shite, project-o build shimasu.
+	</aside>
+</section>
+
+<section>
+	<h3>実行</h3>
+	<h4>Run...</h4>
+	<br />
+	<img src="./assets/image/cordova_wizCanvas_lt/super.jpg">
+	<br />
+	<ul>
+		<li>Open Xcode</li>
+		<li>Compile!</li>
+	</ul>
+	<aside class="notes">
+Saigo ni, Xcode wo hiraite, compilu shimasu.
+	</aside>
+</section>
+
+<section data-transition="zoom">
+	<h2>Thank you & Links</h2>
+	<div id="spacer" style="margin-top:100px"></div>
+	<h4>Wizcorp Plugins @Github</h4> 
+	<a href="http://github.com/wizcorp" target="_blank">http://github.com/wizcorp</a>
+	<br />
+	<br />
+	<h4>WizCanvas @Github</h4> 
+	<a href="http://github.com/wizcorp/phonegap-plugin-wizCanvas" target="_blank">http://github.com/wizcorp/phonegap-plugin-wizCanvas</a>
+	<br />
+	<br />
+	<h4>Me @Twitter</h4>
+	<a href="http://twitter.com/allyogilvie" target="_blank">@allyogilvie</a>
+	<aside class="notes">
+ijo desu. Arigatou gozaimashita
+	</aside>
+</section>
+
