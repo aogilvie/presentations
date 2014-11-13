@@ -1,0 +1,421 @@
+---
+layout: light
+title: Taking Care of Your Heart
+subtitle: With Angular, Ionic and Cordova
+location: |
+  @Tokyo HQ Tokyo Japan
+description: |
+  Mobile apps with Ionic and Cordova (with usecase).
+author: Ally Ogilvie
+date: November 13th 2014
+twitter: allyogilvie
+---
+
+<section data-background="./assets/image/cordova_3/tokyo_blur.jpg">
+    <img style="border:none; background:transparent; box-shadow:none; padding-top:40%" width="276" height="267" src="./assets/image/cordova_3/logo_orange.png" alt="logo"/>
+</section>
+
+<section data-transition="slide" data-background-transition="slide">
+    <h1 style="font-size: 100px">Taking Care of Your Heart</h1>
+    <h3>Wizcorp HQ <br /> @Tokyo Japan</h3>
+    <p>
+        <small>Created by <a href="http://wizcorp.jp">Ally Ogilvie</a> / <a href="http://twitter.com/allyogilvie">@allyogilvie</a>, November 13th 2014</small>
+    </p>
+    <aside class="notes">
+        - Hi, how y'all doing today?
+    </aside>
+</section>
+
+<section>
+    <section data-transition="slide">
+        <h2>Quick Intro</h2>
+        <img width="695" height="185" src="./assets/image/cordova_angular_ionic/AngularJS_logo.png" alt="angular_logo"/>
+        <br />
+        <img width="500" height="174" src="./assets/image/cordova_angular_ionic/Ionic_logo.png" alt="ionic_logo"/>
+        <aside class="notes">
+        </aside>
+    </section>
+    <section data-transition="slide">
+        <h2>What's Angular?</h2>
+        <br />
+        <ul>
+            <li class="fragment" style="list-style-type:none"><h4>☆　Create dynamic views</h4></li>
+            <li class="fragment" style="list-style-type:none"><h4>☆　Extend HTML vocabulary</h4></li>
+            <li class="fragment" style="list-style-type:none"><h4>☆　Focus on fast development</h4></li>
+        <ul>
+        <aside class="notes">
+        </aside>
+    </section>
+    <section data-transition="none">
+        <h2>The Basics</h2>
+        <br />
+        <pre><code data-trim class="html">
+&lt;!doctype html&gt
+&lt;html ng-app&gt
+        </code></pre>
+        <aside class="notes">
+        </aside>
+    </section>
+    <section data-transition="none">
+        <h2>The Basics</h2>
+        <br />
+        <pre><code data-trim class="html">
+&lt;!doctype html&gt
+&lt;html ng-app&gt
+    &lt;head&gt
+       &lt;script src="libs/angularjs/1.3.2/angular.min.js"&gt&lt/script&gt
+    &lt;/head&gt
+        </code></pre>
+        <aside class="notes">
+        </aside>
+    </section>
+    <section data-transition="none">
+        <h2>The Basics</h2>
+        <br />
+        <pre><code data-trim class="html">
+&lt;!doctype html&gt
+&lt;html ng-app&gt
+    &lt;head&gt
+       &lt;script src="libs/angularjs/1.3.2/angular.min.js"&gt&lt/script&gt
+    &lt;/head&gt
+    &lt;body&gt
+        &lt;div&gt
+            &lt;label&gtName:&lt;/label&gt;
+            &lt;hr&gt;
+        </code></pre>
+        <aside class="notes">
+        </aside>
+    </section>
+    <section data-transition="none">
+        <h2>The Basics</h2>
+        <br />
+        <pre><code data-trim class="html">
+&lt;!doctype html&gt
+&lt;html ng-app&gt
+    &lt;head&gt
+       &lt;script src="libs/angularjs/1.3.2/angular.min.js"&gt&lt/script&gt
+    &lt;/head&gt
+    &lt;body&gt
+        &lt;div&gt
+            &lt;label&gtName:&lt;/label&gt;
+            &lt;hr&gt;
+            &lt;input type="text" ng-model="yourName" placeholder="Enter a name here"&gt;
+        </code></pre>
+        <aside class="notes">
+        </aside>
+    </section>
+    <section data-transition="none">
+        <h2>The Basics</h2>
+        <br />
+        <pre><code data-trim class="html">
+&lt;!doctype html&gt
+&lt;html ng-app&gt
+    &lt;head&gt
+       &lt;script src="libs/angularjs/1.3.2/angular.min.js"&gt&lt/script&gt
+    &lt;/head&gt
+    &lt;body&gt
+        &lt;div&gt
+            &lt;label&gtName:&lt;/label&gt;
+            &lt;hr&gt;
+            &lt;input type="text" ng-model="yourName" placeholder="Enter a name here"&gt;
+            &lt;h1&gt;Hello &#123;&#123; yourName &#125;&#125;!&lt;/h1&gt;
+        </code></pre>
+        <aside class="notes">
+        </aside>
+    </section>
+    <section data-transition="none">
+        <h2>The Basics</h2>
+        <br />
+        <pre><code data-trim class="html">
+&lt;!doctype html&gt
+&lt;html ng-app&gt
+    &lt;head&gt
+       &lt;script src="libs/angularjs/1.3.2/angular.min.js"&gt&lt/script&gt
+    &lt;/head&gt
+    &lt;body&gt
+        &lt;div&gt
+            &lt;label&gtName:&lt;/label&gt;
+            &lt;hr&gt;
+            &lt;input type="text" ng-model="yourName" placeholder="Enter a name here"&gt;
+            &lt;h1&gt;Hello &#123;&#123; yourName &#125;&#125;!&lt;/h1&gt;
+        &lt;/div&gt
+    &lt;/body&gt
+&lt;html&gt
+        </code></pre>
+        <aside class="notes">
+        </aside>
+    </section>
+    <section data-markdown>
+        <script type="text/template">
+        ## Result
+
+        ![image](./assets/image/cordova_angular_ionic/result1.png)
+        </script>
+    </section>
+    <section data-markdown>
+        ## Adding Some Control
+
+        - #### Data Binding
+            - ##### Update the view when a model changes
+            - ##### Update the model when a view changes
+
+        - #### Controller
+            - ##### No callbacks
+            - ##### No watching for DOM changes
+    </section>
+    <section data-transition="none">
+        <h2>Controller and</h2>
+        <h2>Data Binding</h2>
+        <p>controllers.js</p>
+        <pre><code data-trim class="js">
+angular.module('myGreatApp', [])
+    .controller('myGreatController', ['$scope', function ($scope) {
+        $scope.yourName = "Bob";
+
+        $scope.exampleScopeFunction = function () {
+            // Do stuff
+        };
+    }]);
+        </code></pre>
+        <aside class="notes">
+        </aside>
+    </section>
+    <section data-transition="none">
+        <h2>Controller and</h2>
+        <h2>Data Binding</h2>
+        <p>controllers.js</p>
+        <pre><code data-trim class="js">
+angular.module('myGreatApp', [])
+    .controller('myGreatController', ['$scope', function ($scope) {
+        $scope.yourName = "Bob";
+
+        $scope.exampleScopeFunction = function () {
+            // Do stuff
+        };
+    }]);
+    .controller('anotherGreatController', ['$scope', function ($scope) {
+        $scope.anotherVariable = "Aflred Bucket-Flapper";
+
+        $scope.anotherScopeFunction = function () {
+            // Do moar stuff
+        };
+    }]);
+        </code></pre>
+        <aside class="notes">
+        </aside>
+    </section>
+    <section>
+        <h2>Directives!</h2>
+        <h4>Example ngRepeat from module "ng"</h4>
+        <pre><code data-trim class="js">
+angular.module('myGreatApp', [])
+    .controller('myGreatController', ['$scope', function ($scope) {
+        $scope.names = [
+            "Aflred Bucket-Flapper",
+            "Gerald Hosepipe",
+            "Roger Kettlefish",
+            "Earnst P. Tittleton"
+        ];
+    }]);
+        </code></pre>
+        <pre><code data-trim class="js">
+&lt;div ng-controller="myGreatController"&gt;
+    &lt;ul ng-repeat="name in names"&gt;
+        &lt;li&gt; &#123;&#123; name &#125;&#125; &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+        </code></pre>
+        <aside class="notes">
+        </aside>
+    </section>
+    <section data-markdown>
+        ### The "ng" Module Directives
+
+        - ##### ngBind
+        - ##### ngChange
+        - ##### ngCloak
+        - ##### ngDisabled
+        - ##### ngMouseenter, ngMousedown ...
+        - ##### ngShow, ngHide
+        - ##### ngValue
+        - ##### ngKeydown, ngKeypress ...
+        - ##### ngClick
+        - ##### ..... There are loads more!
+    </section>
+    <section>
+        <h3>Where is the "ng" module</h3>
+        <h3>What about other modules?</h3>
+        <br />
+        <ul>
+            <li>All ng directives are included in Angular core</li>
+            <li>For 3rd party modules you load them separately and pass them to your controllers</li>
+        </ul>
+    </section>
+    <section class="stretch" style="margin-top:-150px">
+        <p>index.html</p>
+        <pre><code>
+&lt;!doctype html&gt
+&lt;html ng-app&gt
+    &lt;head&gt
+       &lt;script src="libs/angularjs/1.3.2/angular.min.js"&gt&lt/script&gt
+       &lt;script src="js/app.js"&gt&lt/script&gt
+       &lt;script src="js/controllers.js"&gt&lt/script&gt
+    &lt;/head&gt
+        </code></pre>
+        <p>app.js</p>
+        <pre><code>
+angular.module('myGreatApp', [
+    'ngSanitize',
+    'myGreatApp.controllers',
+    'myGreatApp.fluffyCatz',
+    'myGreatApp.directives',
+])
+        </code></pre>
+        <p>controllers.js</p>
+        <pre><code>
+angular.module('myGreatApp.controllers', [])
+    .controller('myGreatController', ['$scope', '$rootScope', '$fluffyCatz', function ($scope, $rootScope, $fluffyCatz) {
+
+        $scope.stupidVariable = "what going on?!?!";
+        $fluffyCatz.makeAFluffyCat();
+
+    }])
+    .controller('AnotherController' ...
+        </code></pre>
+    </section>
+    <style>
+        @keyframes fade {
+            from { opacity: 1.0; color: green; }
+            50% { opacity: 0.2; }
+            to { opacity: 1.0; color: red; }
+        }
+         
+        @-webkit-keyframes fade {
+            from { opacity: 1.0; color: green; }
+            50% { opacity: 0.2; }
+            to { opacity: 1.0; color: red; }
+        }
+        .blink {
+            animation:fade 800ms infinite;
+            -webkit-animation:fade 800ms infinite;
+        }
+    </style>
+    <section style="margin-top:-50px">
+        <img src="./assets/image/cordova_angular_ionic/fluffycatz.jpg" />
+        <h1 class="blink">CLAP!!!</h1>
+    </section>
+</section>
+<section>
+    <section data-transition="slide">
+        <style>
+            .reveal blockquote {
+                box-shadow: none;
+                font-size: 72px;
+                line-height: 1.10;
+            }
+            .reveal blockquote cite {
+                font-size: 32px;
+            }
+            blockquote {
+                font-family: Georgia, serif;
+                font-style: italic;
+                width: 650px;
+                margin: 0.25em 0;
+                padding: 0.25em 40px;
+                /*line-height: 1.45;*/
+                position: relative;
+                color: #383838;
+                text-align: left;
+            }
+            blockquote:before {
+                display: block;
+                content: "\201C";
+                font-size: 220px;
+                position: absolute;
+                left: -120px;
+                top: -60px;
+                color: #7a7a7a;
+            }
+            blockquote cite {
+                color: #999999;
+                display: block;
+                margin-top: 5px;
+                text-align: left;
+            }
+            blockquote cite:before {
+                content: "\2014 \2009";
+            }
+        </style>
+        <h2>What is Ionic?</h2>
+        <br />
+        <br />
+        <blockquote>Basically, Angular for f**kin' mobile brah!<cite>Ally (some asshole)</cite></blockquote>
+        <aside class="notes">
+        </aside>
+    </section>
+    <section data-markdown>
+        ### What's inside?
+```
+angular.module('myGreatApp',
+    ['myGreatApp.controllers',
+    'myGreatApp.fluffyCatz',
+    'ionic' 
+    ......
+])
+```
+
+#### Iconic comes with;
+
+        - ##### ngAnimate
+        - ##### ngSanitze
+
+#### other Angular modules need to be manually included
+    </section>
+    <section data-markdown>
+        ### How does it differ?
+
+        - ##### Still need to declare ng-app
+        - ##### Ionic tags;
+            - ##### &lt; ion-side-menus&gt;
+            - ##### &lt; ion-side-menu-content&gt;
+            - ##### no ng-click use on-tap
+
+    </section>
+    <section data-markdown>
+        ### Ionic CLI
+
+        - ##### ionic serve
+        - ##### ionic build ios
+        - ##### ionic emulate ios
+
+    </section>
+    <section>
+        <h2>Wait a minute...</h2>
+        <br />
+        <h3 class="fragment">1000% Cordova
+            <br />compatibility!!!
+            <br />
+            <img width="750px" height="385px" src="./assets/image/cordova_angular_ionic/ohyeah.gif" />
+        </h3>
+    </section>
+    <section>
+        <h2>! ngCordova !</h2>
+        <br />
+        <h3 class="fragment">Adding the Facebook Plugin! ...
+            <br /><br />
+            <a href="http://ngcordova.com/docs/#Facebook" target="_blank">http://ngcordova.com/docs/#Facebook</a>
+        </h3>
+    </section>
+</section>
+
+<section>
+    <h2>So Exciting!</h2>
+    <br />
+    <img width="720px" height="385px" src="./assets/image/cordova_angular_ionic/exciting.gif" />
+</section>
+
+<section>
+    <h2>Finally.. A little demo</h2>
+    <br />
+    <a href="http://www.zmp.co.jp/products/heartomo" target="_blank">http://www.zmp.co.jp/products/heartomo</a>
+</section>
