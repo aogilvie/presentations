@@ -1,0 +1,218 @@
+html {
+  /* From http://subtlepatterns.com/?p=824 */
+  background-image: url(./sbi_trendy/background.jpg);
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center;
+  font-family: "League Gothic", Impact, sans-serif;
+  color: #eee;
+}
+
+/*********************************************
+ * FONT-FACE DEFINITIONS
+ *********************************************/
+
+@font-face {
+  font-family: 'League Gothic';
+  src: url('./sbi_trendy/league_gothic-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Harrington';
+  src: url('./sbi_trendy/harrington.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  margin: 0 0 20px 0;
+  font-family: 'League Gothic', sans-serif;
+  line-height: 0.9em;
+  letter-spacing: 0.02em;
+
+  text-transform: uppercase;
+  text-shadow: 0px 0px 6px rgba(0,0,0,0.2);
+}
+
+.reveal h1 { font-size: 136px; 	}
+.reveal h2 { font-size: 76px;	}
+.reveal h3 { font-size: 56px;	}
+.reveal h4 { font-size: 36px;	}
+
+.reveal h1.inverted,
+.reveal h2.inverted,
+.reveal h3.inverted,
+.reveal h4.inverted {
+   color: #fff;
+   text-shadow: 0px 0px 2px rgba(0,0,0,0.2);
+}
+
+ .reveal h1 {
+   text-shadow: 0 1px 0 #ccc,
+                0 2px 0 #c9c9c9,
+                0 3px 0 #bbb,
+                0 4px 0 #b9b9b9,
+                0 5px 0 #aaa,
+                0 6px 1px rgba(0,0,0,.1),
+                0 0 5px rgba(0,0,0,.1),
+                0 1px 3px rgba(0,0,0,.3),
+                0 3px 5px rgba(0,0,0,.2),
+                0 5px 10px rgba(0,0,0,.25),
+                0 20px 20px rgba(0,0,0,.15);
+ }
+
+.reveal h1 {
+  text-shadow: 0 1px 0 #333, 0 2px 0 #333333, 0 3px 0 #333, 0 4px 0 #333333, 0 5px 0 #333, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 20px 20px rgba(0, 0, 0, .15);
+}
+
+.bits {
+  float: right;
+  position: relative;
+}
+.bits a {
+  text-indent: 120%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: url('../../assets/image/logo_SBI.png');
+  background-repeat: no-repeat;
+  display: block;
+  height: 66px;
+  position: relative;
+  width: 235px;
+  padding-right: 5px;
+  z-index: 2;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx) {
+  .bits a {
+    background-image: url('../../assets/image/logo_SBI.png');
+    -webkit-background-size: 147px 37px;
+    background-size: 147px 37px;
+  }
+}
+.bits:before {
+  background-color: transparent;
+  content: '';
+  display: block;
+  height: 26px;
+  left: 28px;
+  position: absolute;
+  top: 0;
+  width: 88px;
+  z-index: 1;
+}
+html[dir='rtl'] .bits {
+  float: left;
+}
+
+/*********************************************
+ * COLOURS / TEXT
+ *********************************************/
+.reveal pre {
+  width: 85%;
+  font-size: 20px;
+}
+
+.reveal .note {
+  font-family: 'Harrington', Serif;
+  text-transform: lowercase;
+}
+
+.python-yellow {
+  color: #FFCB3C;
+}
+
+.r-blue {
+  color: #8597BE;
+}
+
+.blue {
+  color: #38C0FA;
+}
+
+.others-green {
+  color: rgba( 50, 200, 90, 0.85);
+}
+
+.hor_row {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hor_row li {
+  display: table-cell !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+.hor_row li a img {
+  max-height: 90px !important;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+}
+.hor_row li a h1 {
+  max-height: 90px !important;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+}
+
+.lv_content_iframe {
+  background-color: white !important;
+}
+
+.python .state-background {
+  background: url(../assets/python-bg.png) left bottom no-repeat, rgba( 255, 203, 60, 0.3);
+}
+.r .state-background {
+  background: url(../assets/r-logo.png) left bottom no-repeat, rgba( 133, 151, 190, 0.2 );
+}
+.soothe .state-background {
+  background: rgba( 50, 200, 90, 0.2 ) !important;
+}
+
+blockquote, q
+{
+  quotes: none !important;
+}
+
+/* Overrides blockquotes " from main.css */
+/*
+Safari doesn't support the quotes attribute, so we do this instead.
+*/
+blockquote:before, blockquote:after, q:before, q:after
+{
+  /*
+  CSS 2; used to remove quotes in case "none" fails below.
+  */
+  content: "" !important;
+  /*
+  CSS 2.1; will remove quotes if supported, and override the above.
+  User-agents that don't understand "none" should ignore it, and
+  keep the above value. This is here for future compatibility,
+  though I'm not 100% convinced that it's a good idea...
+  */
+  content: none !important;
+}
+
+code {
+  overflow-x:auto;
+}
+
+/* Hack to force textwrapping for the code content editables */
+pre {
+  position: relative !important;
+  overflow: auto !important;
+  max-height: 400px !important;
+  min-height: 400px !important;
+  background: #272822;
+}
+
+code {
+  position: absolute !important;
+}

@@ -1,0 +1,217 @@
+---
+layout: sbi-trendy
+title: Etcd
+subtitle: Tech Overview
+description: |
+  Overview of Zen Tech
+author: Ally Ogilvie
+date: April 2016
+twitter: allyogilvie
+---
+
+<section>
+  <h1 class="python-yellow">Etcd And Fleetd Overview</h1>
+  <h3>Oct 28 2016</p>
+</section>
+
+<section>
+  <h1 class="python-yellow">What is etcd?</h1>
+  <h2 class="fragment">
+    /etc
+  </h2>
+  <h2 class="fragment">
+    distributed
+  </h2>
+  <br/>
+  <!-- <h4 class="fragment note">&#123; demo &#125;</h4> -->
+</section>
+
+<section>
+  <h1 class="python-yellow">Starting an etcd2 server</h1>
+</section>
+
+<section>
+  <pre>
+
+
+    etcd2 <span style="background-color: rgb(0,0,0);">--name</span> ${thisName} \
+    <span style="background-color: rgb(0,0,0);">--initial-advertise-peer-urls</span> "${thisIP}:2380,${thisIP}:7001" \
+    <span style="background-color: rgb(0,0,0);">--listen-peer-urls</span> "${thisIP}:2380,${thisIP}:7001" \
+    <span style="background-color: rgb(0,0,0);">--advertise-client-urls</span> "${thisIP}:2379,${thisIP}:4001" \
+    <span style="background-color: rgb(0,0,0);">--listen-client-urls</span> "${thisIP}:2379,${thisIP}:4001" \
+    <span style="background-color: rgb(0,0,0);">--initial-cluster</span> ${cluster} --initial-cluster-state new
+
+    curl -X PUT
+        ${thisIP}:4001/v2/keys/
+                      discovery/
+                      6c007a14875d53d9bf0ef5a6fc0257c817f0fb83/
+                      _config/
+                      size -d value=2
+  </pre>
+</section>
+
+<section>
+  <h3>Joining...</h3>
+  <pre>
+
+
+
+    etcd2 <span style="background-color: rgb(0,0,0);">--name</span> ${thisName} \
+    <span style="background-color: rgb(0,0,0);">--initial-advertise-peer-urls</span> "${COREOS2}:2380,${COREOS2}:7001"
+    <span style="background-color: rgb(0,0,0);">--listen-peer-urls</span> "${COREOS2}:2380,${COREOS2}:7001" \
+    <span style="background-color: rgb(0,0,0);">--listen-client-urls</span> "${COREOS2}:2379,${COREOS2}:4001" \
+    <span style="background-color: rgb(0,0,0);">--advertise-client-urls</span> "${COREOS2}:2379,${COREOS2}:4001" \
+    <span style="background-color: rgb(0,0,0);">--discovery</span> ${COREOS1}:4001/v2/
+                  keys/
+                  discovery/
+                  6c007a14875d53d9bf0ef5a6fc0257c817f0fb83
+  </pre>
+</section>
+
+<section>
+  <h1 class="python-yellow">Set and Get</h1>
+</section>
+
+<section>
+  <h2>Set...</h2>
+  <pre>
+
+  $ etcdctl set /message Hello
+  Hello
+
+  $ curl -L -X PUT http://127.0.0.1:2379/v2/keys/message
+            -d value="Hello"
+  {
+    "action":"set",
+    "node":{
+      "key":"/message",
+      "value":"Hello",
+      "modifiedIndex":4,
+      "createdIndex":4
+    }
+  }
+  </pre>
+</section>
+
+<section>
+  <h2>Get...</h2>
+  <pre>
+
+  $ etcdctl get /message
+  Hello
+
+  $ curl -L http://127.0.0.1:2379/v2/keys/message
+  {
+    "action":"get",
+    "node":{
+      "key":"/message",
+      "value":"Hello",
+      "modifiedIndex":4,
+      "createdIndex":4
+    }
+  }
+  </pre>
+</section>
+
+<section>
+  <h1 class="python-yellow">Fleetd</h1>
+  <pre>
+
+
+    fleetd --config ...
+  </pre>
+</section>
+
+<section>
+  <h2>list-machines</h2>
+  <pre>
+
+
+
+    <span style="background-color: rgb(0,0,0);">localhost tomodachi #</span>  fleetctl list-machines
+    MACHINE		IP		METADATA
+    core01...	10.32.85.78	-
+    core02...	10.32.86.76	-
+  </pre>
+</section>
+
+<section>
+  <h2>Sample Unit File</h2>
+  <pre>
+
+  <span style="background-color: rgb(0,0,0);">$ fleetctl cat hello.service</span>
+  [Unit]
+  Description=Hello World
+
+  [Service]
+  ExecStart=/bin/bash -c "while true; do echo \"Hello, world\";
+            sleep 1; done"
+  </pre>
+</section>
+
+<section>
+  <h2>load</h2>
+  <pre>
+
+
+    <span style="background-color: rgb(0,0,0);">$ fleetctl load hello.service</span>
+
+    Unit hello.service loaded on 113f16a7.../172.17.8.103
+  </pre>
+</section>
+
+<section>
+  <h2>list-units</h2>
+  <pre>
+
+
+    <span style="background-color: rgb(0,0,0);">$ fleetctl list-units</span>
+
+    UNIT          MACHINE                  ACTIVE   SUB
+    hello.service 113f16a7.../172.17.8.103 inactive dead
+  </pre>
+</section>
+
+<section>
+  <h2>start</h2>
+  <pre>
+
+
+    <span style="background-color: rgb(0,0,0);">$ fleetctl start goodbye.service</span>
+
+    Unit goodbye.service launched on 85c0c595.../172.17.8.102
+
+    <span style="background-color: rgb(0,0,0);">$ fleetctl start goodbye.service</span>
+
+    Unit goodbye.service launched on 54d1f777.../172.17.8.103
+  </pre>
+</section>
+
+<section>
+  <h2>status</h2>
+  <pre>
+
+  <span style="background-color: rgb(0,0,0);">$ fleetctl status hello.service</span>
+
+  hello.service - Hello World
+     Loaded: loaded (/run/systemd/system/hello.service; enabled-runtime)
+     Active: active (running) since Wed 2014-01-29 23:20:23 UTC; 1h 49min ago
+   Main PID: 6973 (bash)
+     CGroup: /system.slice/hello.1.service
+             ├─ 6973 /bin/bash -c while true; do echo "Hello, world";...
+             └─20381 sleep 1
+
+  Jan 30 01:09:18 ip-172-31-5-250 bash[6973]: Hello, world
+  Jan 30 01:09:19 ip-172-31-5-250 bash[6973]: Hello, world
+  Jan 30 01:09:20 ip-172-31-5-250 bash[6973]: Hello, world
+  Jan 30 01:09:21 ip-172-31-5-250 bash[6973]: Hello, world
+  </pre>
+</section>
+
+
+<!--
+<section data-background="./assets/image/zen_tech/thumbup.jpg">
+  <h1 style="margin-top: 300px; color: white">Done</h1>
+  <aside class="notes">
+  </aside>
+</section> -->
